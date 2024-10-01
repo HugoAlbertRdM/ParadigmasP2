@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_codigo\\Practice2.csproj",
+      "projectUniqueName": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_code\\Practice2.csproj",
       "projectName": "Practice2",
-      "projectPath": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_codigo\\Practice2.csproj",
+      "projectPath": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_code\\Practice2.csproj",
       "packagesPath": "C:\\Users\\hugoa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_codigo\\obj\\",
+      "outputPath": "C:\\Users\\hugoa\\OneDrive - Universidad Pontificia Comillas\\tercero\\primer cuatri\\paradigmas\\practicas\\Practica2\\Practica2_code\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hugoa\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -11,25 +11,40 @@ namespace Practice1
         private SpeedRadar speedRadar;
         private bool persecutingVehicle;
 
+        public PoliceCar(string plate, PoliceStation policeStation, SpeedRadar speedRadar) : base(typeOfVehicle, plate)
+        {
+            this.policeStation = policeStation;
+            this.speedRadar = speedRadar;
+            isPatrolling = false;
+            persecutingVehicle = false;
+        }
+
         public PoliceCar(string plate, PoliceStation policeStation) : base(typeOfVehicle, plate)
         {
             this.policeStation = policeStation;
+            speedRadar = null;
             isPatrolling = false;
-            speedRadar = new SpeedRadar();
             persecutingVehicle = false;
         }
 
         public void UseRadar(Vehicle vehicle)
         {
-            if (isPatrolling)
+            if (speedRadar != null)
             {
-                speedRadar.TriggerRadar(vehicle);
-                string meassurement = speedRadar.GetLastReading();
-                Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
+                if (isPatrolling)
+                {
+                    speedRadar.TriggerRadar(vehicle);
+                    string meassurement = speedRadar.GetLastReading();
+                    Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
+                }
+                else
+                {
+                    Console.WriteLine(WriteMessage($"has no active radar."));
+                }
             }
             else
             {
-                Console.WriteLine(WriteMessage($"has no active radar."));
+                Console.WriteLine(WriteMessage("has no radar."))
             }
         }
 
@@ -66,10 +81,17 @@ namespace Practice1
 
         public void PrintRadarHistory()
         {
-            Console.WriteLine(WriteMessage("Report radar speed history:"));
-            foreach (float speed in speedRadar.SpeedHistory)
+            if (speedRadar != null)
             {
-                Console.WriteLine(speed);
+                Console.WriteLine(WriteMessage("Report radar speed history:"));
+                foreach (float speed in speedRadar.SpeedHistory)
+                {
+                    Console.WriteLine(speed);
+                }
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage("is already patrolling."));
             }
         }
 
