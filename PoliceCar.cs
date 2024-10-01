@@ -1,16 +1,22 @@
-﻿namespace Practice1
+﻿using PoliceStation
+
+namespace Practice1
 {
     class PoliceCar : Vehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
-        private const string typeOfVehicle = "Police Car"; 
+        private const string typeOfVehicle = "Police Car";
+        private PoliceStation policeStation;
         private bool isPatrolling;
         private SpeedRadar speedRadar;
+        private bool persecutingVehicle;
 
-        public PoliceCar(string plate) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate, PoliceStation policeStation) : base(typeOfVehicle, plate)
         {
+            this.policeStation = policeStation;
             isPatrolling = false;
             speedRadar = new SpeedRadar();
+            persecutingVehicle = false;
         }
 
         public void UseRadar(Vehicle vehicle)
@@ -66,5 +72,17 @@
                 Console.WriteLine(speed);
             }
         }
+
+        public void ActivateAlarm(Vehicle vehicle)
+        {
+            policeStation.SetAlarm(true);
+            policeStation.NotifyPlate(vehicle.GetPlate());
+        }
+        
+
+        public void PersecuteVehicle(string plate):
+            persecutingVehicle = true;
+            /// falta acabar este método y decidir qué hacemos para 
+            /// dejar de perseguir
     }
 }
