@@ -2,7 +2,7 @@
 
 namespace Practice1
 {
-    class PoliceCar : Vehicle
+    class PoliceCar : VehicleWithPlate
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
         private const string typeOfVehicle = "Police Car";
@@ -27,7 +27,7 @@ namespace Practice1
             persecutingVehicle = false;
         }
 
-        public void UseRadar(Vehicle vehicle)
+        public void UseRadar(VehicleWithPlate vehicle)
         {
             if (speedRadar != null)
             {
@@ -95,7 +95,7 @@ namespace Practice1
             }
         }
 
-        public void ActivateAlarm(Vehicle vehicle)
+        public void ActivateAlarm(VehicleWithPlate vehicle)
         {
             policeStation.SetAlarm(true);
             policeStation.NotifyPlate(vehicle.GetPlate());
