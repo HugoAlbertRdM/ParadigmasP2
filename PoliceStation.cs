@@ -4,23 +4,25 @@
 	{
 		private List<PoliceCar> policeCars;
 		private bool alert;
-
-		public PoliceStation()
+		private City city;
+		public PoliceStation(City city)
 		{
+			this.city = city;
 			policeCars = new List<PoliceCar>();
 			alert = false;
 		}
-
+		public City GetCity()
+		{
+			return city;
+		}
 		public void SetAlarm(bool alert) 
 		{
 			this.alert = alert;
 		}
-		public void RegisterPoliceCar(string policePlate)
+		public void RegisterPoliceCar(PoliceCar policeCar)
 		{
-			PoliceCar policeCar = new PoliceCar(policePlate, this);
 			policeCars.Add(policeCar);
 		}
-
 		public void NotifyPlate(string plate)
 		{
 			if (alert)
@@ -30,11 +32,14 @@
 					policeCar.PersecuteVehicle(plate);
 				}
 			}
+			else
+			{
+				Console.WriteLine(WriteMessage("No alert received"));
+			}
 		}
-
 		public string WriteMessage(string message)
 		{
-			return message;
+			return $"Police station of {city.GetName()}: {message}";
 		}
 	}
 }

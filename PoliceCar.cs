@@ -9,7 +9,7 @@
         private SpeedRadar speedRadar;
         private bool persecutingVehicle;
 
-        public PoliceCar(string plate, PoliceStation policeStation, SpeedRadar speedRadar) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate, PoliceStation policeStation, SpeedRadar speedRadar) : base(plate, typeOfVehicle)
         {
             this.policeStation = policeStation;
             this.speedRadar = speedRadar;
@@ -17,7 +17,7 @@
             persecutingVehicle = false;
         }
 
-        public PoliceCar(string plate, PoliceStation policeStation) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate, PoliceStation policeStation) : base(plate, typeOfVehicle)
         {
             this.policeStation = policeStation;
             isPatrolling = false;
@@ -92,18 +92,27 @@
             }
         }
 
-        public void ActivateAlarm(VehicleWithPlate vehicle)
+        public string ActivateAlarm(VehicleWithPlate vehicle)
         {
             policeStation.SetAlarm(true);
-            policeStation.NotifyPlate(vehicle.GetPlate());
+            Console.WriteLine(WriteMessage($"activated police station's alarm for vehicle with plate {vehicle.GetPlate()}"));
+            return vehicle.GetPlate();
         }
 
 
         public void PersecuteVehicle(string plate)
         {
-            persecutingVehicle = true;
-            /// falta acabar este método y decidir qué hacemos para 
-            /// dejar de perseguir
+            if (isPatrolling)
+            {
+                persecutingVehicle = true;
+                Console.WriteLine(WriteMessage($"Persecuting vehicle with plate {plate}"));
+                /// No he aumentado la funcionalidad de este método porque en el
+                /// enunciado no se explica.
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"Is not patrolling"));
+            }
         }
     }
 }

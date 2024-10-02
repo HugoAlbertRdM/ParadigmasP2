@@ -3,13 +3,11 @@
 	class City: IMessageWritter
 	{
 		private string name;
-		private PoliceStation policeStation;
 		private List<Taxi> taxiLicenses;
 
-		public City(string name, PoliceStation policeStation)
+		public City(string name)
 		{
 			this.name = name;
-			this.policeStation = policeStation;
 			taxiLicenses = new List<Taxi>();
 		}
 
@@ -23,24 +21,13 @@
 			this.name = name;
 		}
 
-		public PoliceStation GetPoliceStation()
-		{
-			return policeStation;
-		}
-
-		public void SetPoliceStation(PoliceStation policeStation)
-		{
-			this.policeStation = policeStation;
-		}
-
 		public List<Taxi> GetTaxiLicenses()
 		{
 			return taxiLicenses;
 		}
 
-		public void registerLicense(string taxiPlate)
-		{
-			Taxi taxi = new Taxi(taxiPlate);
+		public void registerLicense(Taxi taxi)
+		{;
 			taxiLicenses.Add(taxi);
 		}
 
@@ -51,7 +38,7 @@
 
 		public string WriteMessage(string message)
 		{
-			return message;
+			return $"City {name}: message";
 		}
 	}
 }
