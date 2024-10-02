@@ -1,6 +1,6 @@
 ﻿namespace Practice2
 {
-	class City
+	class City: IMessageWritter
 	{
 		private string name;
 		private PoliceStation policeStation;
@@ -47,6 +47,11 @@
 		public void unregisterLicense(Taxi taxi)
 		{
 			taxiLicenses.Remove(taxi);
+		}
+
+		public string WriteMessage(string message)
+		{
+			return message;
 		}
 	}
 }

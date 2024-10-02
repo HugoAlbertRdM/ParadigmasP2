@@ -1,6 +1,6 @@
 ﻿namespace Practice2
 {
-	class PoliceStation
+	class PoliceStation: IMessageWritter
 	{
 		private List<PoliceCar> policeCars;
 		private bool alert;
@@ -30,6 +30,11 @@
 					policeCar.PersecuteVehicle(plate);
 				}
 			}
+		}
+
+		public string WriteMessage(string message)
+		{
+			return message;
 		}
 	}
 }
