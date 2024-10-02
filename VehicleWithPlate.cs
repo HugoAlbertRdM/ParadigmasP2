@@ -1,24 +1,25 @@
-﻿using System;
-using Vehicle
-
-public class VehicleWithPlate : Vehicle
+﻿namespace Practice2
 {
-    private string plate;
-
-    public VehicleWithPlate() : base(typeOfVehicle)
+    class VehicleWithPlate : Vehicle
     {
-        this.plate = plate;
-    }
+        private string plate;
+        private static string typeOfVehicle = "Vehicle With Plate";
 
-    public string GetPlate()
-    {
-        return plate;
-    }
+        public VehicleWithPlate(string plate, string typeOfVehicle) : base(typeOfVehicle)
+        {
+            this.plate = plate;
+        }
+
+        public string GetPlate()
+        {
+            return plate;
+        }
 
 
-    //Override ToString() method with class information
-    public override string ToString()
-    {
-        return $"{GetTypeOfVehicle()} with plate {GetPlate()}";
+        //Override ToString() method with class information
+        public override string ToString()
+        {
+            return $"{GetTypeOfVehicle()} with plate {GetPlate()}";
+        }
     }
 }

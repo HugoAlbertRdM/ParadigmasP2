@@ -1,6 +1,4 @@
-﻿using PoliceStation
-
-namespace Practice1
+﻿namespace Practice2
 {
     class PoliceCar : VehicleWithPlate
     {
@@ -22,7 +20,6 @@ namespace Practice1
         public PoliceCar(string plate, PoliceStation policeStation) : base(typeOfVehicle, plate)
         {
             this.policeStation = policeStation;
-            speedRadar = null;
             isPatrolling = false;
             persecutingVehicle = false;
         }
@@ -44,7 +41,7 @@ namespace Practice1
             }
             else
             {
-                Console.WriteLine(WriteMessage("has no radar."))
+                Console.WriteLine(WriteMessage("has no radar."));
             }
         }
 
@@ -100,11 +97,13 @@ namespace Practice1
             policeStation.SetAlarm(true);
             policeStation.NotifyPlate(vehicle.GetPlate());
         }
-        
 
-        public void PersecuteVehicle(string plate):
+
+        public void PersecuteVehicle(string plate)
+        {
             persecutingVehicle = true;
             /// falta acabar este método y decidir qué hacemos para 
             /// dejar de perseguir
+        }
     }
 }

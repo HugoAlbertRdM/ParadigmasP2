@@ -1,35 +1,31 @@
-﻿using System;
-using PoliceStation;
-using Taxi;
-
-namespace Practica2
+﻿namespace Practice2
 {
 	class City
 	{
 		private string name;
-		private policeStation policeStation;
+		private PoliceStation policeStation;
 		private List<Taxi> taxiLicenses;
 
 		public City(string name, PoliceStation policeStation)
 		{
 			this.name = name;
 			this.policeStation = policeStation;
-			taxiLicenses = new List<string>();
+			taxiLicenses = new List<Taxi>();
 		}
 
 		public string GetName()
-		{ 
+		{
 			return name;
 		}
 
 		public void SetName(string name)
 		{
-			this.name=name;
+			this.name = name;
 		}
 
 		public PoliceStation GetPoliceStation()
-		{ 
-			return policeStation; 
+		{
+			return policeStation;
 		}
 
 		public void SetPoliceStation(PoliceStation policeStation)
@@ -37,19 +33,20 @@ namespace Practica2
 			this.policeStation = policeStation;
 		}
 
-		public List<Taxi> GetTaxiLicenses():
+		public List<Taxi> GetTaxiLicenses()
 		{
-			return taxiLicenses; 
+			return taxiLicenses;
 		}
 
 		public void registerLicense(string taxiPlate)
 		{
-			taxi = new Taxi(taxiPlate);
+			Taxi taxi = new Taxi(taxiPlate);
 			taxiLicenses.Add(taxi);
 		}
 
-		public void unregisterLicense(Taxi taxi) 
+		public void unregisterLicense(Taxi taxi)
 		{
-			taxiLicenses.remove(taxi)
+			taxiLicenses.Remove(taxi);
 		}
+	}
 }

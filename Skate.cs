@@ -1,10 +1,11 @@
-﻿using System;
-
-public class Skate : VehicleWithoutPlate
+﻿namespace Practice2
 {
-    private static string typeOfVehicle = "Skate";
+    class Skate : VehicleWithoutPlate
+    {
+        private static string typeOfVehicle = "Skate";
 
-    public Skate()
-	{
-	}
+        public Skate()
+        {
+        }
+    }
 }

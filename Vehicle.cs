@@ -38,3 +38,4 @@
             return $"{this}: {message}";
         }
     }
+}

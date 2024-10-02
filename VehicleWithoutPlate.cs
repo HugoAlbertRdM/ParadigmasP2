@@ -1,8 +1,10 @@
-﻿public class VehicleWithoutPlate : Vehicle
+﻿namespace Practice2
 {
-    private string plate;
-
-    public VehicleWithoutPlate() : base(typeOfVehicle)
+    class VehicleWithoutPlate : Vehicle
     {
+        private static string typeOfVehicle = "Vehicle Without Plate";
+        public VehicleWithoutPlate() : base(typeOfVehicle)
+        {
+        }
     }
 }

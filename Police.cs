@@ -1,9 +1,6 @@
-﻿using System;
-using PoliceStation;
-
-namespace Practica2
+﻿namespace Practice2
 {
-	public class Police
+	class Police
 	{
 		private string id;
 		private PoliceStation policeStation;

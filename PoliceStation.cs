@@ -1,8 +1,5 @@
-﻿using System;
-using PoliceCar;
-
-namespace Practica2
-{ 
+﻿namespace Practice2
+{
 	class PoliceStation
 	{
 		private List<PoliceCar> policeCars;
@@ -14,10 +11,14 @@ namespace Practica2
 			alert = false;
 		}
 
+		public void SetAlarm(bool alert) 
+		{
+			this.alert = alert;
+		}
 		public void RegisterPoliceCar(string policePlate)
 		{
-			policeCar = new PoliceCar(string policePlate);
-			policeCars.Add(policeCar);	
+			PoliceCar policeCar = new PoliceCar(policePlate, this);
+			policeCars.Add(policeCar);
 		}
 
 		public void NotifyPlate(string plate)
@@ -31,4 +32,4 @@ namespace Practica2
 			}
 		}
 	}
-{
+}
